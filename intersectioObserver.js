@@ -15,30 +15,28 @@ function observerCallback (entries) {
   
   const observer = new IntersectionObserver(observerCallback, {threshold: 0.3});
 
+  // Animate onLoad
   export function animateOnLoad () {
     observList.forEach((item) => {
       observer.observe(item);
     })}
 
 
-
+  // Debounce onScroll animation
    function debounce() {
-
       let setTimeoutID;
-  
+
     return function()  {
       if (setTimeoutID) {
           clearTimeout(setTimeoutID)
       }
       setTimeoutID =  setTimeout(() => {
-
         if(window.scrollY < 100){
           observList.forEach((item) => {
           if(item.dataset.observer !== 'home-text' && item.dataset.observer !== 'home-img')
           item.classList.remove('observer-animation')
         })
       }
-      
         }, 1000);
        
     }
