@@ -1,27 +1,10 @@
+import { animateOnLoad, animateOnPageTop } from "./intersectioObserver.js";
 
 const $ = document.querySelector.bind(document);
-const $$ = document.querySelectorAll.bind(document);
 
-// Animation with Intersection Observer 
-const items = $$("[data-observer]");
-let observList = Array.from(items);
+window.addEventListener("load", animateOnLoad);
 
-window.addEventListener("load", () => {
-
-  const callback = (entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('observer-animation')
-      }
-    });
-  };
-
-  const observer = new IntersectionObserver(callback, {threshold: 0.3});
-
-  observList.forEach((item) => {
-    observer.observe(item);
-  });
-});
+window.addEventListener('scroll', animateOnPageTop)
 
 // Toggle menu 
 const toggleMenu = $(".toggle-menu");
