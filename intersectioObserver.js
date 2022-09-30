@@ -20,11 +20,30 @@ function observerCallback (entries) {
       observer.observe(item);
     })}
 
-   export function animateOnPageTop ()  {
+
+
+   function debounce() {
+
+      let setTimeoutID;
+  
+    return function()  {
+      if (setTimeoutID) {
+          clearTimeout(setTimeoutID)
+      }
+      setTimeoutID =  setTimeout(() => {
+
         if(window.scrollY < 100){
           observList.forEach((item) => {
           if(item.dataset.observer !== 'home-text' && item.dataset.observer !== 'home-img')
           item.classList.remove('observer-animation')
-        });
+        })
       }
-      }
+      
+        }, 1000);
+       
+    }
+  }
+
+export const  debouncedAnimateOnPageTop = debounce()
+
+

@@ -1,10 +1,10 @@
-import { animateOnLoad, animateOnPageTop } from "./intersectioObserver.js";
+import { animateOnLoad, debouncedAnimateOnPageTop } from "./intersectioObserver.js";
 
 const $ = document.querySelector.bind(document);
 
 window.addEventListener("load", animateOnLoad);
 
-window.addEventListener('scroll', animateOnPageTop)
+window.addEventListener('scroll', debouncedAnimateOnPageTop)
 
 // Toggle menu 
 const toggleMenu = $(".toggle-menu");
