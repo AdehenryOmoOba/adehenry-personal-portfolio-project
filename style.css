@@ -12,9 +12,9 @@
 
 :root{
     font-size: 62.5%;
-    --big-font: 5rem;
-    --h2-font: 1.9rem;
-    --p-font: 1rem;
+    --big-font: clamp(3rem,4.5vw, 7rem);
+    --h2-font: clamp(2rem,1.9vw, 7rem);
+    --p-font: clamp(1.2rem,1.3vw, 2rem);
     
     /* Colors  */
     --bg-color: #10101a;
@@ -46,7 +46,9 @@ body{
   background-color: var(--second-main-color);
   border-radius: 3rem;
 }
-
+/* section{
+  background-color: pink;
+} */
 /* Header  */
 header{
   position: fixed;
@@ -63,7 +65,7 @@ header{
 }
 .logo{
   color: var(--text-color);
-  font-size: 1.8rem;
+  font-size: 1.8vw;
   font-weight: 600;
 }
 span{
@@ -74,16 +76,19 @@ span{
 }
 .navbar a{
   color: var(--text-color);
-  font-size: 1rem;
+  font-size: clamp(1.3rem, 1vw, 2rem);
   padding: 1rem 2rem;
   font-weight: 500;
 }
 .navbar a:hover{
   background-color: var(--main-color);
   transition: 0.3s;
-} 
+}
+.navbar.active{
+  transform: translateY(0rem);
+}
 
-/* Home  */
+/* Hero  */
 section{
   padding: 12rem 14%;
 }
@@ -98,7 +103,7 @@ section{
 }
 .home-text h5{
   color: var(--text-color);
-  font-size: 2.5rem;
+  font-size: 2.5vw;
   font-weight: 500;
   margin: 0 0 2rem;
 }
@@ -111,14 +116,14 @@ section{
 }
 .home-text h6{
   color: var(--text-color);
-  font-size: 1.8rem;
+  font-size: 1.8vw;
   font-weight: 500;
   margin-bottom: 2.5rem;
 }
 .home-text p{
   max-width: 47rem;
   color: var(--second-main-color);
-  font-size: 1.4rem;
+  font-size: clamp(1.3rem,1.4vw, 2rem);
   font-weight: 300;
   line-height: 2;
   margin-bottom: 1.5rem;
@@ -128,8 +133,8 @@ section{
   justify-content: end;
 }
 .home-img img{
-  width: 35rem;
-  height: 35rem;
+  width: 100%;
+  height: auto;
   border-radius: 50%;
 }
 .btn{
@@ -140,7 +145,7 @@ section{
   line-height: 4.2;
   display: inline-block;
   border: 0.1rem solid transparent;
-  font-size: 1.4rem;
+  font-size: clamp(1.3rem,1.4vw, 2rem);
   font-weight: 400;
   letter-spacing: 0.2rem;
   transition: ease  all 0.35s;
@@ -166,7 +171,7 @@ section{
 .about-text h3{
   margin: 0 0 3rem;
   color: var(--text-color);
-  font-size: 3rem;
+  font-size: 3vw;
   font-weight: 300;
   letter-spacing: 0.6rem;
 }
@@ -175,11 +180,11 @@ section{
   font-weight: 500;
   font-size: var(--h2-font);
   line-height: 1.2;
-  max-width: 47rem;
+  max-width: 30vw;
   margin-bottom: 2rem;
 }
 .about-text p{
-  max-width: 57rem;
+  max-width: 40vw;
   font-size: var(--p-font);
   font-weight: 300;
   margin-bottom: 1.5rem;
@@ -196,7 +201,7 @@ section{
 }
 .count span{
   color: var(--text-color);
-  font-size: 2.7rem;
+  font-size: 2.7vw;
   font-weight: 600;
 }
 .main-btn a:first-child{
@@ -209,7 +214,7 @@ section{
 }
 .center h3{
   color: var(--text-color);
-  font-size: 3rem;
+  font-size: 3vw;
   font-weight: 300;
   letter-spacing: 0.6rem;
 }
@@ -229,17 +234,17 @@ section{
 }
 .row i{
   color: var(--main-color);
-  font-size: 3rem;
+  font-size: 3vw;
   margin-bottom: 2rem;
 }
 .row h3{
-  font-size: 1.25rem;
+  font-size: clamp(1.6rem,1.8vw, 2rem);
   font-weight: 500;
   margin-bottom: 2rem;
   color: var(--text-color);
 }
 .row p{
-  font-size: 1.4rem;
+  font-size: clamp(1.2rem,1.3vw, 2rem);
   color: var(--second-main-color);
   line-height: 1.5;
 }
@@ -258,13 +263,13 @@ section{
 }
 .cta h4{
   color: var(--text-color);
-  font-size: 1.6rem;
+  font-size: clamp(1.6rem,1.6vw, 7rem);
   font-weight: 300;
   margin-bottom: 3rem;
 }
 .cta h2{
   color: var(--main-color);
-  font-size: 4rem;
+  font-size: 4vw;
   font-weight: 300;
   margin-bottom: 4rem;
 }
@@ -276,7 +281,7 @@ section{
 .resume-content{
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(45rem, auto));
-  gap: 3rem;
+  gap: 2rem;
   align-items: center;
   margin-top: 4.4rem;
 }
@@ -289,13 +294,13 @@ section{
 }
 .box h6{
   color: #3e4455;
-  font-size: 1.4rem;
+  font-size: clamp(1.6rem,1.8vw, 2rem);
   font-weight: 600;
   margin-bottom: 1rem;
 }
 .box h4{
   color: var(--text-color);
-  font-size: 1.3rem;
+  font-size: clamp(1.6rem,1.8vw, 2rem);
   font-weight: 700;
   margin-top: 2.5rem;
   margin-bottom: 1.3rem;
@@ -303,12 +308,12 @@ section{
 .box p{
   font-size: var(--p-font);
   font-weight: 300;
-  color: var(--second-main-color);
+  color: clamp(1.2rem,1.3vw, 2rem);
   line-height: 1.8;
   margin-bottom: 1.2rem;
 }
 .box h5{
-  font-size: 1.4rem;
+  font-size: 1.4vw;
   font-weight: 500;
   color: var(--second-main-color);
 }
@@ -345,9 +350,11 @@ textarea{
 form input::placeholder,form textarea::placeholder{
   color: var(--second-main-color);
 }
-form .send-btn{
-  cursor: pointer;
-}
+
+form button{
+  width: 100%;
+  border-radius: 0.5rem;
+} 
 
 /* Copyright  */
 .copyright{
@@ -358,6 +365,10 @@ form .send-btn{
   margin-top: 3rem;
   line-height: 1.8;
 }
+.copyright p{
+  font-size: clamp(1.3rem,1.4vw, 1.6rem);
+}
+
 
 /* Toggle menu  */
 .toggle-menu {
@@ -365,8 +376,9 @@ form .send-btn{
     width: 2.5rem;
     background-color: rgba(3, 4, 8, 0.8);
     position: absolute;
-    top: 1rem;
-    right: 1rem;
+    top: 50%;
+    right: 2rem;
+    transform: translateY(-50%);
     border-radius: 100rem;
     box-shadow: 0rem 0rem 0.5rem 0.1rem rgba(219, 189, 189, 0.5);
     display: grid;
@@ -408,14 +420,83 @@ form .send-btn{
     transform: translateX(2.5rem);
   }
 
-
+  @media only screen and (max-width: 77rem) {
+    header{
+      padding: 2.5rem 3%; 
+    }
+    .home{
+      height: 70vh;
+    }
+    section{
+      padding: 5rem 3%;
+    }
+  }
 
   @media only screen and (max-width: 55rem) {
-
+  header{
+    padding: 2.4rem 3%;
+  }
+  .navbar{
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    background-color: #0b0b13;
+    box-shadow: 0rem 1.5rem 3rem 0rem rgb(0 0 0 / 70%);
+    text-align: left;
+    transition: 0.2s ease;
+    transform: translateY(-40rem);
+  }
+  .navbar a{
+    display: block;
+    padding: 1rem;
+    margin: 1rem;
+    border-left: 0.2rem solid var(--main-color);
+  }
   .toggle-menu {
     visibility: visible;
   }
   .toggle-menu.active {
     box-shadow: 0rem 0rem 0.5rem 0.1rem rgba(3, 4, 8, 0.5);
+  }
+  section h3{
+    margin-top: 1rem;
+  }
+  .about-text h3{
+    margin-top: 2rem;
+  }
+  .home{
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    text-align: center;
+    margin-top: 8rem;
+    height: 100vh;
+  }
+  .home-text p{
+    max-width: 100%;
+  }
+  .home-img{
+    justify-content: center;
+  }
+  .home-img img{
+    max-width: 100%;
+    width: 30rem;
+    height: auto;
+
+  }
+  .about{
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  .about p,.about h2{
+    max-width: 100%;
+  }
+  .about-img{
+    order: 2;
+  }
+  .resume-content{
+    grid-template-columns: repeat(auto-fit, minmax(35rem, auto));
   }
 }
