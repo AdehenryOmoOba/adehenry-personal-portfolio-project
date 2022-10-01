@@ -1,7 +1,11 @@
 const $$ = document.querySelectorAll.bind(document);
+const $ = document.querySelector.bind(document);
 
 // Animation with Intersection Observer 
+const header = $("header");
 const items = $$("[data-observer]");
+const goTop = $('.go-up')
+
 let observList = Array.from(items);
 
 
@@ -22,7 +26,7 @@ function observerCallback (entries) {
     })}
 
 
-  // Debounce onScroll animation
+  // Debounced animation onScroll
    function debounce() {
       let setTimeoutID;
 
@@ -32,12 +36,17 @@ function observerCallback (entries) {
       }
       setTimeoutID =  setTimeout(() => {
         if(window.scrollY < 100){
+          header.classList.add('top')
+          goTop.classList.remove('active')
           observList.forEach((item) => {
           if(item.dataset.observer !== 'home-text' && item.dataset.observer !== 'home-img')
           item.classList.remove('observer-animation')
         })
+      }else{
+        header.classList.remove('top')
+        goTop.classList.add('active')
       }
-        }, 1000);
+        }, 500);
        
     }
   }

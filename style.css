@@ -17,9 +17,9 @@
     --p-font: clamp(1.2rem,1.3vw, 2rem);
     
     /* Colors  */
-    --bg-color: #10101a;
+    --bg-color: rgb(16, 16, 26);
     --text-color: #ffffff;
-    --main-color: #2fbf71;
+    --main-color: rgb(47, 191, 113);
     --second-main-color: #ffffcc;
 
 }
@@ -63,8 +63,22 @@ header{
 }
 .logo{
   color: var(--text-color);
-  font-size: 1.8vw;
+  font-size: clamp(1.6rem,1.8vw, 4rem);
   font-weight: 600;
+}
+.light-dark{
+  height: 2.5rem;
+  width: 2.5rem;
+  padding: 1rem 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: auto;
+  cursor: pointer;
+}
+.bx-sun{
+ cursor: pointer;
+ font-size: clamp(2.5rem, 1vw, 3rem);
 }
 span{
   color: var(--main-color);
@@ -72,7 +86,7 @@ span{
 .navbar{
   display: flex;
 }
-.navbar a{
+.navbar a,.bx-moon{
   color: var(--text-color);
   font-size: clamp(1.3rem, 1vw, 2rem);
   padding: 1rem 2rem;
@@ -283,7 +297,7 @@ section{
   margin-bottom: 4rem;
 }
 .cta h2 span{
-  margin-right: 0.5rem;
+  margin-right: 0.3rem;
 }
 
 /* Resume  */
@@ -364,11 +378,13 @@ textarea{
 }
 form input::placeholder,form textarea::placeholder{
   color: var(--second-main-color);
+  opacity: 0.4;
 }
 
 form button{
   width: 100%;
   border-radius: 0.5rem;
+  cursor: pointer;
 } 
 
 /* Copyright  */
@@ -382,7 +398,7 @@ form button{
   opacity: 0;
 }
 .copyright p{
-  font-size: clamp(1.3rem,1.4vw, 1.6rem);
+  font-size: clamp(0.8rem,1vw, 1.4rem);
 }
 
 
@@ -439,10 +455,51 @@ form button{
     animation: observer 2.5s ease 0.2s forwards;
   }
 
+  /* Back To Top Button  */
+  .go-up{
+    position: sticky;
+    margin-left: 88vw;
+    bottom: 3rem;
+    width: 10vw;
+    height: 10vw;
+    display: grid;
+    place-content: center;
+    z-index: 300;
+    border-radius: 50%;
+    outline: none;
+    border: 0.1rem solid var(--text-color);
+    font-size: 6vw;
+    color: var(--text-color);
+    background-color: rgba(47, 191, 113, 0.1);
+    -webkit-backdrop-filter: blur(1rem);
+    backdrop-filter: blur(1rem);
+    pointer-events: none;
+    opacity: 0;
+    transition: all 0.3s;
+  }
+
   /* Responsiveness  */
   @media only screen and (max-width: 77rem) {
     header{
       padding: 2.5rem 3%; 
+      background-color: rgba(16, 16, 26, 0.5);
+      -webkit-backdrop-filter: blur(1rem);
+      backdrop-filter: blur(1rem);
+    }
+    .light-dark{
+      width: 100%;
+      position: absolute;
+      left: 0;
+      right: 0;
+    }
+    /* .bx-sun{
+      font-size: 2.5rem;
+     } */
+    header.top{
+      padding: 3.5rem 3%; 
+      background-color: rgba(16, 16, 26, 1);
+      -webkit-backdrop-filter: blur(0rem);
+      backdrop-filter: blur(0rem);
     }
     .home{
       height: 70vh;
@@ -454,6 +511,10 @@ form button{
       max-width: 100%;
       width: 35rem;
       height: auto;
+    }
+    .go-up.active{
+      pointer-events: all;
+      opacity: 1;
     }
   }
 

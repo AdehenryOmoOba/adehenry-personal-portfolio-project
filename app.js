@@ -21,4 +21,9 @@ navbar.addEventListener("click", (e) => {
   toggleMenu.classList.remove("active")}
 });
 
+// God Top Button 
+const goTop = $('.go-up')
+goTop.addEventListener('click', () => {
+  window.scrollTo({top: 0})
+})
 
