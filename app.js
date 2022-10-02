@@ -27,3 +27,21 @@ goTop.addEventListener('click', () => {
   window.scrollTo({top: 0})
 })
 
+// Dark Mode Switch 
+const sun = $('.bx-sun')
+const moon = $('.bx-moon')
+const lightDark = $('.light-dark')
+lightDark.addEventListener('click', (e) => {
+  if(lightDark.dataset.theme === 'light'){
+    lightDark.setAttribute('data-theme', 'dark')
+    sun.classList.remove('active')
+    moon.classList.add('active')
+    document.body.classList.toggle('light-theme')
+
+  }else{
+    lightDark.setAttribute('data-theme', 'light')
+    moon.classList.remove('active')
+    sun.classList.add('active')
+    document.body.classList.toggle('light-theme')
+  }
+})

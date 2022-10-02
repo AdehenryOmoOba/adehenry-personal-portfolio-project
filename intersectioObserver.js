@@ -26,7 +26,7 @@ function observerCallback (entries) {
     })}
 
 
-  // Debounced animation onScroll
+  // Debounced Animate onScroll
    function debounce() {
       let setTimeoutID;
 
