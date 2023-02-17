@@ -4,7 +4,7 @@ const $ = document.querySelector.bind(document);
 
 window.addEventListener("load", animateOnLoad);
 
-window.addEventListener('scroll', `debouncedAnimateOnPageTop`)
+window.addEventListener('scroll', debouncedAnimateOnPageTop)
 
 // Toggle menu 
 const toggleMenu = $(".toggle-menu");
