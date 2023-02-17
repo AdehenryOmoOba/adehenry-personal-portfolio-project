@@ -25,7 +25,6 @@ navbar.addEventListener("click", (e) => {
 const goTop = $('.go-up')
 goTop.addEventListener('click', () => {
   window.scrollTo({top: 0})
-  
 })
 
 // Dark Mode Switch 
