@@ -4,7 +4,7 @@ const $ = document.querySelector.bind(document);
 
 window.addEventListener("load", animateOnLoad);
 
-window.addEventListener('scroll', debouncedAnimateOnPageTop)
+window.addEventListener('scroll', `debouncedAnimateOnPageTop`)
 
 // Toggle menu 
 const toggleMenu = $(".toggle-menu");
@@ -21,10 +21,11 @@ navbar.addEventListener("click", (e) => {
   toggleMenu.classList.remove("active")}
 });
 
-// God Top Button 
+// Go Top Button 
 const goTop = $('.go-up')
 goTop.addEventListener('click', () => {
   window.scrollTo({top: 0})
+  
 })
 
 // Dark Mode Switch 
