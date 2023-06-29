@@ -456,7 +456,7 @@ form button{
   }
   .toggle-menu span {
     position: absolute;
-    background-color: #fff;
+    background-color: var(--text-color);
     width: 1.7rem;
     height: 0.2rem;
     border-radius: 5rem;
