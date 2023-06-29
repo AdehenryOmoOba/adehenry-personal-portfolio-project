@@ -21,6 +21,7 @@
     --form-input-bg-color: rgb(11, 11, 19);
     --button-bg-color:var(--main-color);
     --text-color: #ffffff;
+    --placeholder-color: #3e4455;
     --main-color: rgb(47, 191, 113);
     --second-main-color: #ffffcc;
     --go-up-btn-shadow:0rem 1.5rem 3rem 0rem rgb(0 0 0 / 70%);
@@ -35,6 +36,7 @@
   --form-input-bg-color:var(--row-bg-color);
   --button-bg-color:rgb(86, 244, 157);
   --text-color: #10101a;
+  --placeholder-color: rgb(209, 209, 209);
   --main-color: #067939;
   --second-main-color: #2fbf71;
   --go-up-btn-shadow:0rem 0.5rem 1rem 0rem rgba(20, 20, 20, 0.7);
@@ -412,7 +414,8 @@ textarea{
   height: 20rem;
 }
 form input::placeholder,form textarea::placeholder{
-  color: var(--text-color);
+  /* color: var(--text-color); */
+  color: var(--placeholder-color);
   font-family: 'Rubik', sans-serif;
 }
 
